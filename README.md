@@ -1,9 +1,19 @@
 # Spring Boot + Angular 11 CRUD example with MySQL Database
 
-For more details, please visit:
-[https://bezkoder.com/angular-11-spring-boot-crud/](https://bezkoder.com/angular-11-spring-boot-crud/)
+This folder contains a demo application -  SpringBootAngularDemo. It has:
+* SpringBoot Java files (spring-boot-server)
+* Angular project files (angular-11-client)
 
-In this tutorial, we will learn how to build a full stack Angular 11 + Spring Boot example with a CRUD App. The back-end server uses Spring Boot with Spring Web MVC for REST Controller and Spring Data JPA for interacting with MySQL database. Front-end side is made with Angular 11, HTTPClient & Router.
+## Prerequisites:
+
+* NodeJS/NPM
+* Angular-CLI
+* Maven
+* Visual Studio Code
+* Eclipse/IntelliJ IDE
+
+The back-end server uses Spring Boot with Spring Web MVC for REST Controller and Spring Data JPA for interacting with MySQL database.
+Front-end side is made with Angular 11, HTTPClient & Router.
 
 We will build a full-stack Tutorial Application in that:
 
@@ -44,25 +54,43 @@ This is the application architecture we will build:
 - Spring Boot exports REST Apis using Spring Web MVC & interacts with MySQL Database using Spring Data JPA.
 - Angular Client sends HTTP Requests and retrieve HTTP Responses using axios, shows data on the components. We also use Angular Router for navigating to pages.
 
-## Video
-This is our Angular Spring Boot CRUD application demo and brief instruction, running with MySQL database:
+### To setup MySQL database:
 
-[![Angular Spring Boot CRUD application demo](http://img.youtube.com/vi/K8mV6XWA_EY/0.jpg)](http://www.youtube.com/watch?v=K8mV6XWA_EY "Angular Spring Boot CRUD application demo")
+* Download and install MySQL-community-installer from the following [link](https://dev.mysql.com/downloads/windows/installer/8.0.html)
+* Follow the steps in the **SQL Installation** document included in this ZIP file.
+* Note: Remember your MySQL credentials that you set during installation.
+* Once MySQL is completely installed, it is ready to be used by Spring Boot.
+* In Spring Boot, in the **application.properties** file, you will include:
+    * MySQL Driver (default is `com.mysql.cj.jdbc.Driver`)
+    * Database URL (default is `localhost:3306`)
+    * Default database to use (should be created on MySQL)
+    * DB username and password (set during installation)
 
-In the video, we use Angular 10, but it has the same logic & UI as Angular version 11 in this tutorial.
+### To setup Spring Boot project:
 
-# More Practice
+* Open Eclipse IDE and import the **spring-boot-server** folder
+* Wait for the project to finish building. Once it is complete, you can browse the files.
+* (Optional)Install the Spring Tools Eclipse plugin
+    * Click on Help -> Install New Software...
+    * Paste the following: https://download.springsource.com/release/TOOLS/sts4/update/e4.18
+    * Note: The last part of the URL is the Eclipse version. Replace that to match your Eclipse version number.
+    * Click Next and accept license agreement.
+    * Once the installation is complete, restart Eclipse.
+* Check the **application.properties** folder and ensure that the MySQL credentials match your server credentials.
+* Once all of the above are complete, we are ready to start the server.
+* To start the server,
+    * If you have the plugin, right click the project and select Run As -> Spring Boot App
+    * If you have Maven installed on your system, in the terminal, run `mvn spring-boot:run`
+    * If you none of the above, right click the project, click on Maven -> Maven Build... -> In the Goals field, enter `spring-boot:run`
 
-You will want to know how to run both projects in one place:
-> [How to Integrate Angular with Spring Boot Rest API](https://bezkoder.com/integrate-angular-spring-boot/)
+### To setup Angular project:
 
-Server side Pagination:
-> [Pagination with Angular + Spring Boot example](https://bezkoder.com/pagination-angular-10-spring-boot/)
+* Open Visual Studio Code and import the **angular-11-client** folder.
+* You may browser the file once the import is complete.
+* Open a terminal window in VSCode.
+* cd into the **angular-11-client** folder and run `npm install`
+* Once the application's module files are generated, run the `ng serve -o` to start the Angular application
+* A browser tab/window will open up with the application's homepage.
 
-Security:
-> [Angular 11 + Spring Boot: JWT Authentication & Authorization example](https://bezkoder.com/angular-11-spring-boot-jwt-auth/)
 
-Serverless with Firebase:
-> [Angular 11 Firebase CRUD Realtime DB | AngularFireDatabase](https://bezkoder.com/angular-11-firebase-crud/)
-
-> [Angular 11 Firestore CRUD example | AngularFireStore](https://bezkoder.com/angular-11-firestore-crud-angularfirestore/)
+Congratulations!! Your Angular-Spring Boot application is now ready for use!
